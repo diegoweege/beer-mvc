@@ -11,4 +11,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.Oracle10gDialect
+        dialect: org.hibernate.dialect.Oracle12cDialect
+
+  application:
+    name: beer-mvc
+
+server:
+  port: 8080
+
+client:
+  file-upload:
+    url: http://localhost:8082/file-upload/image
