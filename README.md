@@ -4,7 +4,21 @@
 
 - Na versão inicial não foi adicionada a integração com o liquibase. Segue comandos para criar a tabela inicial com alguns registros:
 
-``
+- Postgres
+
+```
+CREATE TABLE beer (
+	id serial NOT NULL UNIQUE PRIMARY KEY,
+	name varchar(50) NULL,
+	type varchar(50) NULL,
+	value numeric(10,2) NULL,
+	content numeric(10,2) NULL,
+	url_image varchar(100) NULL	
+);
+```
+
+- Oracle
+```
 create table beer(
     id NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
     name VARCHAR2(50) NOT NULL,
@@ -14,7 +28,7 @@ create table beer(
     url_image VARCHAR2(100),
     PRIMARY KEY(id)
 );
-``
+```
 
 - Exemplo de chamada para salvar uma nova cerveja:
 ````

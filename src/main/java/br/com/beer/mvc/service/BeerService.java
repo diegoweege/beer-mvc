@@ -21,7 +21,7 @@ public class BeerService {
         return beerRepository.findAll();
     }
 
-    public void save(final BeerRequest request) {
+    public String save(final BeerRequest request) {
         final String urlImage = fileUploadService.execute(request.getImage());
 
         final Beer beer = Beer.builder()
@@ -33,5 +33,7 @@ public class BeerService {
             .build();
 
         beerRepository.save(beer);
+
+        return beer.getUrlImage();
     }
 }

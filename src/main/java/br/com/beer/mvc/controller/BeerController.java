@@ -30,7 +30,7 @@ public class BeerController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public void save(@RequestBody BeerRequest request) {
-        beerService.save(request);
+    public String save(@RequestBody BeerRequest request) {
+        return beerService.save(request);
     }
 }

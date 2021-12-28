@@ -1,17 +1,17 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: oracle
+    url: jdbc:postgresql://localhost:5432/beer?initialSize=1&maxIdleTime=PT60S
+    username: postgres
+    password: 1234
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.Oracle12cDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   application:
     name: beer-mvc
